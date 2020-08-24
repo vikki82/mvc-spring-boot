@@ -1,0 +1,43 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+
+	<div class="header">
+		<ul>
+
+			<li><a href="#about">About</a></li>
+			<li><a href=""  >List</a></li>
+			<li><a class="active" href="#home">Home</a></li>
+
+			<li class="head">Student Registration</li>
+		</ul>
+	</div>
+	<div class="center">
+
+		<form action="#" th:action="@{add}" th:object="${student}"
+			method="post">
+			<table>
+				<tr>
+					<td>Student Name</td>
+					<td><input type="text" th:field="${student.studentName}" placeholder="Enter name"></td>
+				<tr>
+					<td>Roll No.</td>
+					<td><input type="text" th:field="${student.rollNumber}" placeholder="Enter Roll NO."></td>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit">
+			</table>
+		</form>
+
+	</div>
+
+
+
+</body>
+</html>

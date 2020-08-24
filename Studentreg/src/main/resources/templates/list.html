@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+
+
+<link rel="stylesheet" type="text/css" href="../style.css">
+<link rel="stylesheet" type="text/css" href="../button.css">
+</head>
+<body>
+	<div class="header">
+		<ul>
+
+			<li><a href="#about">About</a></li>
+			<li><a href="#contact">List</a></li>
+			<li><a class="active" href="#home">Home</a></li>
+
+			<li class="head">Student List</li>
+		</ul>
+	</div>
+
+	<div class="show">
+		<table id="customers">
+			<tr>
+
+				<th>Name</th>
+				<th>Roll no</th>
+				<th>Delete</th>
+
+			</tr>
+		
+		
+			<tr th:each="student : ${students}">
+
+				<td th:text="${student.studentName}"></td>
+				<td th:text="${student.rollNumber}"></td>
+				<td><a th:href="@{/delete/{id}(id=${student.id})}"><button
+							class="btn">Delete</button></a>
+			</tr>
+
+		</table>
+	</div>
+
+</body>
+</html>
